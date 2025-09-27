@@ -195,8 +195,8 @@ export function NFTCard({ nft, onClick, onBuy, onView }: NFTCardProps) {
               </Button>
               <Button 
                 size="sm"
+                variant="gradient"
                 onClick={onBuy}
-                className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white"
               >
                 <ShoppingCart className="w-3 h-3 mr-1" />
                 Buy

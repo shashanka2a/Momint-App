@@ -211,18 +211,16 @@ export function MarketplaceScreen() {
             {/* View Mode Toggle */}
             <div className="flex items-center space-x-2">
               <Button
-                variant={viewMode === 'grid' ? 'default' : 'ghost'}
+                variant={viewMode === 'grid' ? 'white' : 'ghost'}
                 size="sm"
                 onClick={() => setViewMode('grid')}
-                className={viewMode === 'grid' ? 'bg-white text-purple-900' : 'text-white hover:bg-white/10'}
               >
                 <Grid3X3 className="w-4 h-4" />
               </Button>
               <Button
-                variant={viewMode === 'list' ? 'default' : 'ghost'}
+                variant={viewMode === 'list' ? 'white' : 'ghost'}
                 size="sm"
                 onClick={() => setViewMode('list')}
-                className={viewMode === 'list' ? 'bg-white text-purple-900' : 'text-white hover:bg-white/10'}
               >
                 <List className="w-4 h-4" />
               </Button>

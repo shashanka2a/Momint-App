@@ -174,25 +174,17 @@ export function AuthScreen() {
                   <div className="grid grid-cols-2 gap-3">
                     <Button
                       type="button"
-                      variant={signupForm.userType === 'fan' ? 'default' : 'outline'}
+                      variant={signupForm.userType === 'fan' ? 'white' : 'outline'}
                       onClick={() => setSignupForm(prev => ({ ...prev, userType: 'fan' }))}
-                      className={`h-12 ${
-                        signupForm.userType === 'fan'
-                          ? 'bg-white text-purple-900'
-                          : 'border-white/20 text-white hover:bg-white/10'
-                      }`}
+                      className="h-12"
                     >
                       Fan
                     </Button>
                     <Button
                       type="button"
-                      variant={signupForm.userType === 'influencer' ? 'default' : 'outline'}
+                      variant={signupForm.userType === 'influencer' ? 'white' : 'outline'}
                       onClick={() => setSignupForm(prev => ({ ...prev, userType: 'influencer' }))}
-                      className={`h-12 ${
-                        signupForm.userType === 'influencer'
-                          ? 'bg-white text-purple-900'
-                          : 'border-white/20 text-white hover:bg-white/10'
-                      }`}
+                      className="h-12"
                     >
                       Creator
                     </Button>
