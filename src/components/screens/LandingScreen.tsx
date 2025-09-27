@@ -2,7 +2,6 @@
 
 import { Navigation } from "../Navigation";
 import { Hero } from "../Hero";
-import { TrustSignals } from "../TrustSignals";
 import { ProblemSolution } from "../ProblemSolution";
 import { HowItWorks } from "../HowItWorks";
 import { MarketplacePreview } from "../MarketplacePreview";
@@ -16,7 +15,6 @@ export function LandingScreen() {
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-blue-900">
       <Navigation />
       <Hero />
-      <TrustSignals />
       <ProblemSolution />
       <HowItWorks />
       <MarketplacePreview />
