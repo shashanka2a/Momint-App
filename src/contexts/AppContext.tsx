@@ -52,6 +52,8 @@ interface AppContextType {
   // Navigation
   currentScreen: Screen;
   setCurrentScreen: (screen: Screen) => void;
+  navigateToScreen: (screen: Screen) => Promise<void>;
+  isNavigating: boolean;
   
   // User state
   user: User | null;
@@ -74,8 +76,17 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [currentScreen, setCurrentScreen] = useState<Screen>('landing');
   const [user, setUser] = useState<User | null>(null);
   const [selectedNFT, setSelectedNFT] = useState<NFT | null>(null);
+  const [isNavigating, setIsNavigating] = useState(false);
 
   const isAuthenticated = !!user;
+
+  const navigateToScreen = async (screen: Screen) => {
+    setIsNavigating(true);
+    // Simulate navigation delay for better UX
+    await new Promise(resolve => setTimeout(resolve, 300));
+    setCurrentScreen(screen);
+    setIsNavigating(false);
+  };
 
   const login = async (email: string, password: string): Promise<boolean> => {
     // Mock login - in real app, this would call your backend
@@ -122,11 +133,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
     <AppContext.Provider value={{
       currentScreen,
       setCurrentScreen,
+      navigateToScreen,
       user,
       setUser,
       isAuthenticated,
       selectedNFT,
       setSelectedNFT,
+      isNavigating,
       login,
       signup,
       logout

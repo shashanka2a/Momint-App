@@ -470,21 +470,13 @@ export function MintingScreen() {
             <Button
               onClick={handleMint}
               size="lg"
-              disabled={isMinting}
+              loading={isMinting}
+              loadingText="Minting..."
               variant="gradient"
               className="w-full h-14"
             >
-              {isMinting ? (
-                <>
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                  Minting...
-                </>
-              ) : (
-                <>
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Mint NFT
-                </>
-              )}
+              <Sparkles className="w-5 h-5 mr-2" />
+              Mint NFT
             </Button>
           </div>
         );

@@ -42,6 +42,8 @@ export function NFTDetailScreen() {
   const [isLiked, setIsLiked] = useState(false);
   const [bidAmount, setBidAmount] = useState('');
   const [showBidInput, setShowBidInput] = useState(false);
+  const [isBuying, setIsBuying] = useState(false);
+  const [isBidding, setIsBidding] = useState(false);
 
   if (!selectedNFT) {
     return (
@@ -56,16 +58,29 @@ export function NFTDetailScreen() {
     );
   }
 
-  const handleBuyNow = () => {
-    // In a real app, this would initiate the purchase flow
-    alert('Purchase flow would be initiated here');
+  const handleBuyNow = async () => {
+    setIsBuying(true);
+    try {
+      // Simulate purchase process
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      alert('Purchase flow would be initiated here');
+    } finally {
+      setIsBuying(false);
+    }
   };
 
-  const handlePlaceBid = () => {
+  const handlePlaceBid = async () => {
     if (bidAmount) {
-      alert(`Bid of ${bidAmount} ETH placed!`);
-      setBidAmount('');
-      setShowBidInput(false);
+      setIsBidding(true);
+      try {
+        // Simulate bid placement
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        alert(`Bid of ${bidAmount} ETH placed!`);
+        setBidAmount('');
+        setShowBidInput(false);
+      } finally {
+        setIsBidding(false);
+      }
     }
   };
 
@@ -229,6 +244,8 @@ export function NFTDetailScreen() {
                   onClick={handleBuyNow}
                   size="lg"
                   variant="gradient"
+                  loading={isBuying}
+                  loadingText="Processing..."
                   className="flex-1 h-12"
                 >
                   <ShoppingCart className="w-5 h-5 mr-2" />
@@ -263,6 +280,8 @@ export function NFTDetailScreen() {
                     <Button
                       onClick={handlePlaceBid}
                       variant="gradient"
+                      loading={isBidding}
+                      loadingText="Placing Bid..."
                     >
                       Submit Bid
                     </Button>

@@ -15,6 +15,7 @@ import { toast } from "sonner";
 export function AuthScreen() {
   const { setCurrentScreen, login, signup } = useApp();
   const [isLoading, setIsLoading] = useState(false);
+  const [socialAuthProvider, setSocialAuthProvider] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState(false);
   const [activeTab, setActiveTab] = useState('signup');
 
@@ -63,8 +64,20 @@ export function AuthScreen() {
     }
   };
 
-  const handleSocialAuth = (provider: string) => {
-    toast.info(`${provider} authentication coming soon!`);
+  const handleSocialAuth = async (provider: string) => {
+    setSocialAuthProvider(provider);
+    setIsLoading(true);
+    
+    try {
+      // Simulate authentication delay
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      toast.info(`${provider} authentication coming soon!`);
+    } catch (error) {
+      toast.error('Authentication failed. Please try again.');
+    } finally {
+      setIsLoading(false);
+      setSocialAuthProvider(null);
+    }
   };
 
   return (
@@ -206,10 +219,11 @@ export function AuthScreen() {
                 <Button
                   type="submit"
                   variant="gradient"
-                  disabled={isLoading}
+                  loading={isLoading}
+                  loadingText="Creating Account..."
                   className="w-full h-12 rounded-2xl transition-all duration-300 transform hover:scale-105"
                 >
-                  {isLoading ? "Creating Account..." : "Create Account"}
+                  Create Account
                 </Button>
               </form>
             </TabsContent>
@@ -254,10 +268,11 @@ export function AuthScreen() {
                 <Button
                   type="submit"
                   variant="gradient"
-                  disabled={isLoading}
+                  loading={isLoading}
+                  loadingText="Signing In..."
                   className="w-full h-12 rounded-2xl transition-all duration-300 transform hover:scale-105"
                 >
-                  {isLoading ? "Signing In..." : "Sign In"}
+                  Sign In
                 </Button>
 
                 <div className="text-center">
@@ -286,6 +301,8 @@ export function AuthScreen() {
                 type="button"
                 variant="outline"
                 onClick={() => handleSocialAuth('Google')}
+                loading={isLoading && socialAuthProvider === 'Google'}
+                loadingText="Connecting..."
                 className="h-12 border-white/50 text-white hover:bg-white/20 rounded-2xl bg-white/5 backdrop-blur-sm font-bold"
               >
                 <Chrome className="w-5 h-5 mr-2" />
@@ -295,6 +312,8 @@ export function AuthScreen() {
                 type="button"
                 variant="outline"
                 onClick={() => handleSocialAuth('MetaMask')}
+                loading={isLoading && socialAuthProvider === 'MetaMask'}
+                loadingText="Connecting..."
                 className="h-12 border-white/50 text-white hover:bg-white/20 rounded-2xl bg-white/5 backdrop-blur-sm font-bold"
               >
                 <Wallet className="w-5 h-5 mr-2" />
