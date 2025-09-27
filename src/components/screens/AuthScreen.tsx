@@ -171,23 +171,35 @@ export function AuthScreen() {
 
                 <div className="space-y-3">
                   <Label className="text-white">I am a...</Label>
-                  <div className="grid grid-cols-2 gap-3">
-                    <Button
+                  <div className="flex bg-white/10 rounded-2xl p-1">
+                    <button
                       type="button"
-                      variant={signupForm.userType === 'fan' ? 'white' : 'outline'}
                       onClick={() => setSignupForm(prev => ({ ...prev, userType: 'fan' }))}
-                      className="h-12"
+                      className={`flex-1 py-3 px-4 rounded-xl transition-all duration-300 font-bold ${
+                        signupForm.userType === 'fan'
+                          ? 'bg-white text-[#1A1A1A] shadow-lg'
+                          : 'text-white hover:bg-white/10'
+                      }`}
                     >
-                      Fan
-                    </Button>
-                    <Button
+                      <div className="flex items-center justify-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500"></div>
+                        Fan
+                      </div>
+                    </button>
+                    <button
                       type="button"
-                      variant={signupForm.userType === 'influencer' ? 'white' : 'outline'}
                       onClick={() => setSignupForm(prev => ({ ...prev, userType: 'influencer' }))}
-                      className="h-12"
+                      className={`flex-1 py-3 px-4 rounded-xl transition-all duration-300 font-bold ${
+                        signupForm.userType === 'influencer'
+                          ? 'bg-white text-[#1A1A1A] shadow-lg'
+                          : 'text-white hover:bg-white/10'
+                      }`}
                     >
-                      Creator
-                    </Button>
+                      <div className="flex items-center justify-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500"></div>
+                        Creator
+                      </div>
+                    </button>
                   </div>
                 </div>
 
@@ -274,19 +286,19 @@ export function AuthScreen() {
                 type="button"
                 variant="outline"
                 onClick={() => handleSocialAuth('Google')}
-                className="h-12 border-white/20 text-white hover:bg-white/10 rounded-2xl"
+                className="h-12 border-white/50 text-white hover:bg-white/20 rounded-2xl bg-white/5 backdrop-blur-sm font-bold"
               >
                 <Chrome className="w-5 h-5 mr-2" />
-                Google
+                Continue with Google
               </Button>
               <Button
                 type="button"
                 variant="outline"
                 onClick={() => handleSocialAuth('MetaMask')}
-                className="h-12 border-white/20 text-white hover:bg-white/10 rounded-2xl"
+                className="h-12 border-white/50 text-white hover:bg-white/20 rounded-2xl bg-white/5 backdrop-blur-sm font-bold"
               >
                 <Wallet className="w-5 h-5 mr-2" />
-                MetaMask
+                Continue with MetaMask
               </Button>
             </div>
           </div>
