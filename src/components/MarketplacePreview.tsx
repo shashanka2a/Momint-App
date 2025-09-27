@@ -187,7 +187,7 @@ export function MarketplacePreview() {
           <Button 
             size="lg"
             variant="outline"
-            className="border-white/30 text-white hover:bg-white/10 px-8 py-4 transition-all duration-300 transform hover:scale-105"
+            className="border-white/50 text-white hover:bg-white/20 px-8 py-4 transition-all duration-300 transform hover:scale-105 bg-white/5 backdrop-blur-sm font-bold"
           >
             <Users className="w-5 h-5 mr-2" />
             Explore Full Marketplace

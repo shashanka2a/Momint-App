@@ -90,7 +90,7 @@ export function Community() {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
+                className="border-white/50 text-white hover:bg-white/20 px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 flex items-center gap-3 bg-white/5 backdrop-blur-sm font-bold"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M15.68 12.44L8.86 3.18a1.5 1.5 0 0 0-2.36 1.88l5.34 7.94-5.34 7.94a1.5 1.5 0 0 0 2.36 1.88l6.82-9.26c.26-.37.26-.87 0-1.12z"/>
