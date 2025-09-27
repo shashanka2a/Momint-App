@@ -87,7 +87,8 @@ export function Navigation() {
             </Button>
             <Button 
               onClick={() => setCurrentScreen('auth')}
-              className="bg-white text-purple-900 hover:bg-purple-50 transition-all duration-300 transform hover:scale-105"
+              variant="white"
+              className="transition-all duration-300 transform hover:scale-105"
             >
               Get Early Access
             </Button>
@@ -144,7 +145,8 @@ export function Navigation() {
                 </Button>
                 <Button 
                   onClick={() => setCurrentScreen('auth')}
-                  className="w-full bg-white text-purple-900 hover:bg-purple-50"
+                  variant="white"
+                  className="w-full"
                 >
                   Get Early Access
                 </Button>

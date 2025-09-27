@@ -166,14 +166,14 @@ export function DashboardScreen() {
               <>
                 <AnimatedTabsTrigger 
                   value="created" 
-                  className="rounded-xl data-[state=active]:text-purple-900 text-white"
+                  className="rounded-xl data-[state=active]:text-[#1A1A1A] text-white"
                 >
                   <Grid3X3 className="w-4 h-4 mr-2" />
                   My NFTs
                 </AnimatedTabsTrigger>
                 <AnimatedTabsTrigger 
                   value="analytics"
-                  className="rounded-xl data-[state=active]:text-purple-900 text-white"
+                  className="rounded-xl data-[state=active]:text-[#1A1A1A] text-white"
                 >
                   <TrendingUp className="w-4 h-4 mr-2" />
                   Analytics
@@ -183,14 +183,14 @@ export function DashboardScreen() {
               <>
                 <AnimatedTabsTrigger 
                   value="owned"
-                  className="rounded-xl data-[state=active]:text-purple-900 text-white"
+                  className="rounded-xl data-[state=active]:text-[#1A1A1A] text-white"
                 >
                   <Grid3X3 className="w-4 h-4 mr-2" />
                   My NFTs
                 </AnimatedTabsTrigger>
                 <AnimatedTabsTrigger 
                   value="activity"
-                  className="rounded-xl data-[state=active]:text-purple-900 text-white"
+                  className="rounded-xl data-[state=active]:text-[#1A1A1A] text-white"
                 >
                   <Activity className="w-4 h-4 mr-2" />
                   Activity
@@ -199,7 +199,7 @@ export function DashboardScreen() {
             )}
             <AnimatedTabsTrigger 
               value="messages"
-              className="rounded-xl data-[state=active]:text-purple-900 text-white"
+              className="rounded-xl data-[state=active]:text-[#1A1A1A] text-white"
             >
               <MessageSquare className="w-4 h-4 mr-2" />
               Messages

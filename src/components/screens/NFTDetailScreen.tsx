@@ -334,19 +334,19 @@ export function NFTDetailScreen() {
             <TabsList className="bg-white/10 backdrop-blur-md border-white/20 rounded-2xl p-1">
               <TabsTrigger 
                 value="description" 
-                className="rounded-xl data-[state=active]:bg-white data-[state=active]:text-purple-900 text-white"
+                className="rounded-xl data-[state=active]:bg-white data-[state=active]:text-[#1A1A1A] text-white"
               >
                 Description
               </TabsTrigger>
               <TabsTrigger 
                 value="creator"
-                className="rounded-xl data-[state=active]:bg-white data-[state=active]:text-purple-900 text-white"
+                className="rounded-xl data-[state=active]:bg-white data-[state=active]:text-[#1A1A1A] text-white"
               >
                 Creator Bio
               </TabsTrigger>
               <TabsTrigger 
                 value="history"
-                className="rounded-xl data-[state=active]:bg-white data-[state=active]:text-purple-900 text-white"
+                className="rounded-xl data-[state=active]:bg-white data-[state=active]:text-[#1A1A1A] text-white"
               >
                 Transaction History
               </TabsTrigger>

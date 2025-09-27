@@ -75,7 +75,7 @@ export function MarketplacePreview() {
                 variant={category === "All" ? "default" : "secondary"}
                 className={`px-4 py-2 cursor-pointer transition-all duration-300 ${
                   category === "All" 
-                    ? "bg-white text-purple-900" 
+                    ? "bg-white text-[#1A1A1A]" 
                     : "bg-white/10 text-white hover:bg-white/20"
                 }`}
               >

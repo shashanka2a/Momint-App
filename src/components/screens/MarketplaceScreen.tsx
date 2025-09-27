@@ -245,7 +245,7 @@ export function MarketplaceScreen() {
                 variant={selectedCategory === category ? "default" : "secondary"}
                 className={`px-4 py-2 cursor-pointer transition-all duration-300 ${
                   selectedCategory === category
-                    ? "bg-white text-purple-900"
+                    ? "bg-white text-[#1A1A1A]"
                     : "bg-white/10 text-white hover:bg-white/20"
                 }`}
                 onClick={() => setSelectedCategory(category)}

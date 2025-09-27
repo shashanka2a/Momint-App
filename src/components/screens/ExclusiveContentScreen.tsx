@@ -213,7 +213,7 @@ export function ExclusiveContentScreen() {
               variant={activeTab === tab ? 'default' : 'outline'}
               className={
                 activeTab === tab
-                  ? 'bg-white text-purple-900'
+                  ? 'bg-white text-[#1A1A1A]'
                   : 'border-white/20 text-white hover:bg-white/10'
               }
             >

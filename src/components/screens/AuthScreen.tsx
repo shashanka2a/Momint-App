@@ -107,13 +107,13 @@ export function AuthScreen() {
             <TabsList className="grid w-full grid-cols-2 bg-white/5 rounded-2xl p-1">
               <TabsTrigger 
                 value="signup" 
-                className="rounded-xl data-[state=active]:bg-white data-[state=active]:text-purple-900 text-white"
+                className="rounded-xl data-[state=active]:bg-white data-[state=active]:text-[#1A1A1A] text-white"
               >
                 Sign Up
               </TabsTrigger>
               <TabsTrigger 
                 value="signin"
-                className="rounded-xl data-[state=active]:bg-white data-[state=active]:text-purple-900 text-white"
+                className="rounded-xl data-[state=active]:bg-white data-[state=active]:text-[#1A1A1A] text-white"
               >
                 Sign In
               </TabsTrigger>
