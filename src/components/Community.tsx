@@ -80,6 +80,7 @@ export function Community() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg" 
+                variant="default"
                 className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
               >
                 <MessageCircle className="w-5 h-5" />

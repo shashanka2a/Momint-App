@@ -50,7 +50,8 @@ export function FloatingCTA() {
             <Button
               onClick={scrollToEarlyAccess}
               size="lg"
-              className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-full shadow-2xl shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
+              variant="gradient"
+              className="px-8 py-4 rounded-full shadow-2xl shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 flex items-center gap-3"
             >
               <Sparkles className="w-5 h-5" />
               Get Early Access

@@ -214,7 +214,7 @@ export function DashboardScreen() {
                   <h2 className="text-2xl text-white">My Created NFTs</h2>
                   <Button
                     onClick={() => setCurrentScreen('minting')}
-                    className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white"
+                    variant="gradient"
                   >
                     <Plus className="w-4 h-4 mr-2" />
                     Mint NFT

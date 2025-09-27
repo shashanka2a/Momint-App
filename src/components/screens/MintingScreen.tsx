@@ -157,7 +157,7 @@ export function MintingScreen() {
                   </div>
                   <Button
                     onClick={() => document.getElementById('file-upload')?.click()}
-                    className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white"
+                    variant="gradient"
                   >
                     Choose File
                   </Button>
@@ -471,7 +471,8 @@ export function MintingScreen() {
               onClick={handleMint}
               size="lg"
               disabled={isMinting}
-              className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white h-14"
+              variant="gradient"
+              className="w-full h-14"
             >
               {isMinting ? (
                 <>
@@ -591,7 +592,7 @@ export function MintingScreen() {
                 (currentStep === 3 && (!formData.title || !formData.description || !formData.category)) ||
                 (currentStep === 5 && !formData.price)
               }
-              className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white"
+              variant="gradient"
             >
               Next
               <ArrowRight className="w-4 h-4 ml-2" />

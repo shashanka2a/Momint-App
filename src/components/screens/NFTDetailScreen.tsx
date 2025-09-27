@@ -228,7 +228,8 @@ export function NFTDetailScreen() {
                 <Button
                   onClick={handleBuyNow}
                   size="lg"
-                  className="flex-1 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white h-12"
+                  variant="gradient"
+                  className="flex-1 h-12"
                 >
                   <ShoppingCart className="w-5 h-5 mr-2" />
                   Buy Now
@@ -261,7 +262,7 @@ export function NFTDetailScreen() {
                     />
                     <Button
                       onClick={handlePlaceBid}
-                      className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white"
+                      variant="gradient"
                     >
                       Submit Bid
                     </Button>
@@ -289,7 +290,8 @@ export function NFTDetailScreen() {
               </div>
               <Button
                 onClick={handleUnlockContent}
-                className="w-full mt-4 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white"
+                variant="gradient"
+                className="w-full mt-4"
               >
                 Unlock Exclusive Content
               </Button>

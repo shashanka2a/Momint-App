@@ -143,7 +143,7 @@ export function ExclusiveContentScreen() {
             <div className="space-y-3">
               <Button
                 onClick={() => setCurrentScreen('nft-detail')}
-                className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white"
+                variant="gradient"
               >
                 View NFT Details
               </Button>
@@ -425,7 +425,7 @@ export function ExclusiveContentScreen() {
                           <Button
                             onClick={() => handleClaimPerk(index)}
                             size="sm"
-                            className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white"
+                            variant="gradient"
                           >
                             Claim Perk
                           </Button>

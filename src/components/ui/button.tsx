@@ -9,16 +9,20 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 font-bold",
+        default: "bg-primary text-white hover:bg-primary/90 font-bold",
         destructive:
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 font-bold",
         outline:
-          "border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 font-bold",
+          "border border-gray-300 bg-white text-gray-900 hover:bg-gray-50 hover:text-gray-900 dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:hover:bg-gray-700 font-bold",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 font-bold",
+          "bg-gray-100 text-gray-900 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 font-bold",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 font-bold",
+          "text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white font-bold",
         link: "text-primary underline-offset-4 hover:underline font-bold",
+        // Custom variants for specific use cases
+        white: "bg-white text-gray-900 hover:bg-gray-50 font-bold border border-gray-200",
+        gradient: "bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-600 hover:to-blue-600 font-bold",
+        dark: "bg-gray-900 text-white hover:bg-gray-800 font-bold",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

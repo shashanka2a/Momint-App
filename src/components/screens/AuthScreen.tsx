@@ -201,8 +201,9 @@ export function AuthScreen() {
 
                 <Button
                   type="submit"
+                  variant="gradient"
                   disabled={isLoading}
-                  className="w-full h-12 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white rounded-2xl transition-all duration-300 transform hover:scale-105"
+                  className="w-full h-12 rounded-2xl transition-all duration-300 transform hover:scale-105"
                 >
                   {isLoading ? "Creating Account..." : "Create Account"}
                 </Button>
@@ -248,8 +249,9 @@ export function AuthScreen() {
 
                 <Button
                   type="submit"
+                  variant="gradient"
                   disabled={isLoading}
-                  className="w-full h-12 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white rounded-2xl transition-all duration-300 transform hover:scale-105"
+                  className="w-full h-12 rounded-2xl transition-all duration-300 transform hover:scale-105"
                 >
                   {isLoading ? "Signing In..." : "Sign In"}
                 </Button>

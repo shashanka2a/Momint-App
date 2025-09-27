@@ -37,8 +37,9 @@ export function Hero() {
           >
             <Button 
               size="lg" 
+              variant="white"
               onClick={() => setCurrentScreen('auth')}
-              className="bg-white text-purple-900 hover:bg-purple-50 transition-all duration-300 px-10 py-4 text-lg font-bold shadow-lg hover:shadow-xl"
+              className="transition-all duration-300 px-10 py-4 text-lg font-bold shadow-lg hover:shadow-xl"
             >
               Get Early Access
             </Button>
