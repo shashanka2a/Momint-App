@@ -262,7 +262,7 @@ export function ExclusiveContentScreen() {
                   <p className="text-purple-200 mb-4">{mockExclusiveContent.video.description}</p>
                   <div className="flex space-x-3">
                     <Button 
-                      className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white"
+                      variant="gradient"
                     >
                       <Play className="w-4 h-4 mr-2" />
                       Watch Now
