@@ -45,7 +45,7 @@ export function HowItWorks() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 pt-8">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -55,10 +55,10 @@ export function HowItWorks() {
               viewport={{ once: true }}
               className="relative group"
             >
-              <div className="glass-card rounded-3xl p-8 card-hover h-full">
+              <div className="glass-card rounded-3xl p-8 card-hover h-full relative overflow-visible">
                 {/* Enhanced step number */}
-                <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-r from-momint-purple to-momint-blue rounded-2xl flex items-center justify-center shadow-lg animate-pulse-glow">
-                  <span className="text-white font-bold text-lg">{step.number}</span>
+                <div className="absolute -top-4 -left-4 w-14 h-14 bg-gradient-to-r from-momint-purple to-momint-blue rounded-2xl flex items-center justify-center shadow-lg animate-pulse-glow z-10">
+                  <span className="text-white font-bold text-base">{step.number}</span>
                 </div>
 
                 {/* Enhanced icon */}

@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Badge } from "./ui/badge";
 import { Eye, Heart, Users } from "lucide-react";
+import { useState } from "react";
 
 const featuredNFTs = [
   {
@@ -54,6 +55,14 @@ const featuredNFTs = [
 ];
 
 export function MarketplacePreview() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  
+  const categories = ["All", "Photography", "Digital Art", "Music", "Sports", "Gaming"];
+  
+  const filteredNFTs = selectedCategory === "All" 
+    ? featuredNFTs 
+    : featuredNFTs.filter(nft => nft.category === selectedCategory);
+
   return (
     <section id="marketplace" className="py-20 px-4 relative overflow-hidden seamless-section">
       {/* Floating background elements */}
@@ -76,12 +85,13 @@ export function MarketplacePreview() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {["All", "Photography", "Digital Art", "Music", "Sports", "Gaming"].map((category) => (
+            {categories.map((category) => (
               <Badge 
                 key={category} 
-                variant={category === "All" ? "default" : "secondary"}
+                variant={category === selectedCategory ? "default" : "secondary"}
+                onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-3 cursor-pointer transition-all duration-300 text-sm font-medium ${
-                  category === "All" 
+                  category === selectedCategory 
                     ? "bg-momint-purple text-white hover:bg-momint-purple-dark animate-pulse-glow" 
                     : "glass-card text-secondary hover:text-primary hover:bg-momint-purple/20"
                 }`}
@@ -93,7 +103,7 @@ export function MarketplacePreview() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {featuredNFTs.map((nft, index) => (
+          {filteredNFTs.map((nft, index) => (
             <motion.div
               key={nft.id}
               initial={{ opacity: 0, y: 50 }}
