@@ -28,7 +28,7 @@ const featuredNFTs = [
     handle: "@sarahcreates",
     price: "0.5 ETH",
     priceUSD: "$800",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW9uJTIwY3liZXJwdW5rJTIwYXJ0fGVufDF8fHx8MTc1ODk3OTc1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1746128034004-15f131d1d30c?fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
     perks: ["Behind Scenes", "Discord Role", "Early Drops"],
     views: 1920,
     likes: 89,
