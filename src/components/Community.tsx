@@ -1,8 +1,21 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { MessageCircle, Users, Zap } from "lucide-react";
+import { MessageCircle, Mail, Bell } from "lucide-react";
+import { useState } from "react";
 
 export function Community() {
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setIsSubscribed(true);
+      // Here you would typically send the email to your backend
+      console.log("Email submitted:", email);
+    }
+  };
+
   return (
     <section id="community" className="py-20 px-4 relative overflow-hidden seamless-section">
       {/* Floating background elements */}
@@ -19,58 +32,67 @@ export function Community() {
           className="space-y-8"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl text-primary font-bold mb-6">
-            Join Our Community
+            Be the First to Know
           </h2>
           <p className="text-xl md:text-2xl text-secondary max-w-4xl mx-auto leading-relaxed">
-            Connect with creators and collectors in our vibrant community
+            Join our waitlist and get early access when we launch
           </p>
 
-          {/* Enhanced Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="space-y-3"
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-momint-purple to-momint-blue rounded-2xl flex items-center justify-center mx-auto shadow-lg animate-pulse-glow">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-3xl md:text-4xl text-primary font-bold">50K+</h3>
-              <p className="text-secondary font-medium">Active Members</p>
-            </motion.div>
+          {/* Email Signup */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-md mx-auto mt-12 mb-12"
+          >
+            {!isSubscribed ? (
+              <form onSubmit={handleEmailSubmit} className="space-y-4">
+                <div className="flex gap-3">
+                  <div className="flex-1 relative">
+                    <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary" />
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email"
+                      className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-primary placeholder-secondary focus:outline-none focus:ring-2 focus:ring-momint-purple focus:border-transparent transition-all duration-300"
+                      required
+                    />
+                  </div>
+                  <Button 
+                    type="submit"
+                    size="lg" 
+                    className="bg-gradient-to-r from-momint-purple to-momint-blue hover:from-momint-purple-dark hover:to-momint-blue-dark text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2 font-bold shadow-lg hover:shadow-xl"
+                  >
+                    <Bell className="w-5 h-5" />
+                    Join Waitlist
+                  </Button>
+                </div>
+                <p className="text-sm text-secondary text-center">
+                  Get notified about our launch and exclusive early access
+                </p>
+              </form>
+            ) : (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center space-y-4"
+              >
+                <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto shadow-lg animate-pulse-glow">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl text-primary font-bold">You're on the list!</h3>
+                <p className="text-secondary">
+                  We'll notify you as soon as we launch. Get ready for something amazing! 🚀
+                </p>
+              </motion.div>
+            )}
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="space-y-3"
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-momint-blue to-momint-purple rounded-2xl flex items-center justify-center mx-auto shadow-lg animate-pulse-glow" style={{ animationDelay: '0.5s' }}>
-                <Zap className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-3xl md:text-4xl text-primary font-bold">1.2K+</h3>
-              <p className="text-secondary font-medium">Verified Creators</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="space-y-3"
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-momint-purple to-momint-blue rounded-2xl flex items-center justify-center mx-auto shadow-lg animate-pulse-glow" style={{ animationDelay: '1s' }}>
-                <MessageCircle className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-3xl md:text-4xl text-primary font-bold">25K+</h3>
-              <p className="text-secondary font-medium">NFTs Minted</p>
-            </motion.div>
-          </div>
-
-          {/* Enhanced Community platforms */}
+          {/* Community platforms */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +101,7 @@ export function Community() {
             className="space-y-8"
           >
             <p className="text-lg text-secondary mb-8 font-medium">
-              Join the conversation and stay updated on new drops
+              Follow us for updates and behind-the-scenes content
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
