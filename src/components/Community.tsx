@@ -4,9 +4,8 @@ import { MessageCircle, Users, Zap } from "lucide-react";
 
 export function Community() {
   return (
-    <section id="community" className="py-20 px-4 bg-momint-primary relative overflow-hidden">
-      {/* Sophisticated background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-purple-800/20 animate-gradient-shift" />
+    <section id="community" className="py-20 px-4 relative overflow-hidden seamless-section">
+      {/* Floating background elements */}
       <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-20 left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />

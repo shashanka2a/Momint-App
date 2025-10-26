@@ -3,9 +3,8 @@ import { Twitter, Instagram, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-momint-secondary py-16 px-4 relative overflow-hidden">
-      {/* Sophisticated background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-purple-800/20 animate-gradient-shift" />
+    <footer className="py-16 px-4 relative overflow-hidden seamless-section">
+      {/* Floating background elements */}
       <div className="absolute top-10 left-10 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
       

@@ -39,9 +39,8 @@ const fanChallenges = [
 
 export function ProblemSolution() {
   return (
-    <section id="problem-solution" className="py-20 px-4 bg-momint-secondary relative overflow-hidden">
-      {/* Sophisticated background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-purple-800/20 animate-gradient-shift" />
+    <section id="problem-solution" className="py-20 px-4 relative overflow-hidden seamless-section">
+      {/* Floating background elements */}
       <div className="absolute top-1/4 -left-32 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
       

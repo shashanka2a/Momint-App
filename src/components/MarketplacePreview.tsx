@@ -55,9 +55,8 @@ const featuredNFTs = [
 
 export function MarketplacePreview() {
   return (
-    <section id="marketplace" className="py-20 px-4 bg-momint-primary relative overflow-hidden">
-      {/* Sophisticated background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-purple-800/20 animate-gradient-shift" />
+    <section id="marketplace" className="py-20 px-4 relative overflow-hidden seamless-section">
+      {/* Floating background elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
       

@@ -12,7 +12,7 @@ import { FloatingCTA } from "../FloatingCTA";
 
 export function LandingScreen() {
   return (
-    <div className="min-h-screen bg-momint-primary">
+    <div className="full-page-gradient">
       <Navigation />
       <Hero />
       <ProblemSolution />
