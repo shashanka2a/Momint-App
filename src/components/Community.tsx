@@ -84,9 +84,9 @@ export function Community() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="text-2xl text-primary font-bold">You're on the list!</h3>
+                <h3 className="text-2xl text-primary font-bold">You&apos;re on the list!</h3>
                 <p className="text-secondary">
-                  We'll notify you as soon as we launch. Get ready for something amazing! 🚀
+                  We&apos;ll notify you as soon as we launch. Get ready for something amazing! 🚀
                 </p>
               </motion.div>
             )}
