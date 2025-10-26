@@ -18,7 +18,7 @@ export function Community() {
           viewport={{ once: true }}
           className="space-y-8"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl text-primary font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-primary font-bold mb-6">
             Join Our Community
           </h2>
           <p className="text-xl md:text-2xl text-secondary max-w-4xl mx-auto leading-relaxed">

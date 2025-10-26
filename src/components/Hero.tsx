@@ -19,7 +19,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary leading-tight">
             Own Moments from Your
             <br />
             <span className="bg-gradient-to-r from-momint-purple to-momint-blue bg-clip-text text-transparent animate-gradient-shift">
