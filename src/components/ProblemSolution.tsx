@@ -39,14 +39,13 @@ const fanChallenges = [
 
 export function ProblemSolution() {
   return (
-    <section id="problem-solution" className="py-20 px-4 bg-gradient-to-b from-blue-900 to-purple-900 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-32 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
-      </div>
+    <section id="problem-solution" className="py-20 px-4 bg-momint-secondary relative overflow-hidden">
+      {/* Sophisticated background elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-purple-800/20 animate-gradient-shift" />
+      <div className="absolute top-1/4 -left-32 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-1/4 -right-32 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
       
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,10 +53,10 @@ export function ProblemSolution() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl text-primary font-bold mb-6">
             Solving Real Problems
           </h2>
-          <p className="text-xl text-purple-100 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-secondary max-w-4xl mx-auto leading-relaxed">
             Traditional social platforms create barriers between creators and fans. We&apos;re changing that.
           </p>
         </motion.div>
@@ -71,7 +70,10 @@ export function ProblemSolution() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h3 className="text-2xl md:text-3xl text-white mb-8">
+            <h3 className="text-2xl md:text-3xl text-primary font-bold mb-8 flex items-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-momint-purple to-momint-blue rounded-lg flex items-center justify-center mr-3">
+                <Users className="w-5 h-5 text-white" />
+              </div>
               For Influencers
             </h3>
             {influencerChallenges.map((challenge, index) => (
@@ -81,14 +83,19 @@ export function ProblemSolution() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="flex items-start space-x-4 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300"
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="glass-card rounded-2xl p-6 card-hover group"
               >
-                <div className="flex-shrink-0">
-                  <challenge.icon className="w-8 h-8 text-purple-300" />
-                </div>
-                <div>
-                  <h4 className="text-white mb-2">{challenge.title}</h4>
-                  <p className="text-purple-100">{challenge.description}</p>
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-momint-purple/20 to-momint-blue/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <challenge.icon className="w-6 h-6 text-momint-purple" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-primary font-bold mb-2 text-lg">{challenge.title}</h4>
+                    <p className="text-secondary leading-relaxed">{challenge.description}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -102,7 +109,10 @@ export function ProblemSolution() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h3 className="text-2xl md:text-3xl text-white mb-8">
+            <h3 className="text-2xl md:text-3xl text-primary font-bold mb-8 flex items-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-momint-blue to-momint-purple rounded-lg flex items-center justify-center mr-3">
+                <Heart className="w-5 h-5 text-white" />
+              </div>
               For Fans
             </h3>
             {fanChallenges.map((challenge, index) => (
@@ -112,14 +122,19 @@ export function ProblemSolution() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="flex items-start space-x-4 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300"
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="glass-card rounded-2xl p-6 card-hover group"
               >
-                <div className="flex-shrink-0">
-                  <challenge.icon className="w-8 h-8 text-blue-300" />
-                </div>
-                <div>
-                  <h4 className="text-white mb-2">{challenge.title}</h4>
-                  <p className="text-purple-100">{challenge.description}</p>
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-momint-blue/20 to-momint-purple/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <challenge.icon className="w-6 h-6 text-momint-blue" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-primary font-bold mb-2 text-lg">{challenge.title}</h4>
+                    <p className="text-secondary leading-relaxed">{challenge.description}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}

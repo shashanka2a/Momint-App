@@ -24,8 +24,13 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 px-4 bg-gradient-to-b from-purple-900 to-blue-900">
-      <div className="max-w-7xl mx-auto">
+    <section id="how-it-works" className="py-20 px-4 bg-momint-primary relative overflow-hidden">
+      {/* Sophisticated background elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-purple-800/20 animate-gradient-shift" />
+      <div className="absolute top-20 right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,15 +38,15 @@ export function HowItWorks() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl text-primary font-bold mb-6">
             How It Works
           </h2>
-          <p className="text-xl text-purple-100 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-secondary max-w-4xl mx-auto leading-relaxed">
             Three simple steps to transform social moments into valuable digital assets
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -51,32 +56,32 @@ export function HowItWorks() {
               viewport={{ once: true }}
               className="relative group"
             >
-              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 transform hover:scale-105">
-                {/* Step number */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">{step.number}</span>
+              <div className="glass-card rounded-3xl p-8 card-hover h-full">
+                {/* Enhanced step number */}
+                <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-r from-momint-purple to-momint-blue rounded-2xl flex items-center justify-center shadow-lg animate-pulse-glow">
+                  <span className="text-white font-bold text-lg">{step.number}</span>
                 </div>
 
-                {/* Icon */}
-                <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center">
-                    <step.icon className="w-8 h-8 text-white" />
+                {/* Enhanced icon */}
+                <div className="flex justify-center mb-8 mt-4">
+                  <div className="w-20 h-20 bg-gradient-to-r from-momint-purple/20 to-momint-blue/20 rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <step.icon className="w-10 h-10 text-momint-purple" />
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="text-center space-y-4">
-                  <h3 className="text-xl md:text-2xl text-white">
+                {/* Enhanced content */}
+                <div className="text-center space-y-6">
+                  <h3 className="text-xl md:text-2xl text-primary font-bold">
                     {step.title}
                   </h3>
-                  <p className="text-purple-100 leading-relaxed">
+                  <p className="text-secondary leading-relaxed text-lg">
                     {step.description}
                   </p>
                 </div>
 
-                {/* Connecting line (hidden on mobile) */}
+                {/* Enhanced connecting line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transform -translate-y-1/2" />
+                  <div className="hidden md:block absolute top-1/2 -right-6 w-12 h-1 bg-gradient-to-r from-momint-purple to-momint-blue rounded-full transform -translate-y-1/2 animate-pulse" />
                 )}
               </div>
             </motion.div>

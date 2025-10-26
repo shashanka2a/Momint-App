@@ -7,25 +7,31 @@ export function Hero() {
 
   return (
     <section id="hero" className="min-h-screen flex flex-col justify-center items-center px-4 py-20 pt-24 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-purple-800 to-blue-900 -z-10" />
+      {/* Sophisticated background with animated elements */}
+      <div className="absolute inset-0 bg-momint-primary" />
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-blue-900/30 to-purple-800/30 animate-gradient-shift" />
       
-      <div className="max-w-4xl mx-auto text-center space-y-12">
+      {/* Floating background elements */}
+      <div className="absolute top-20 left-20 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-20 right-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse" />
+      
+      <div className="max-w-6xl mx-auto text-center space-y-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary leading-tight">
             Own Moments from Your
             <br />
-            <span className="bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-momint-purple to-momint-blue bg-clip-text text-transparent animate-gradient-shift">
               Favorite Influencers
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl text-secondary max-w-4xl mx-auto leading-relaxed">
             Exclusive NFTs with perks like meet-and-greets, discounts, and gated content
           </p>
           
@@ -37,20 +43,39 @@ export function Hero() {
           >
             <Button 
               size="lg" 
-              variant="white"
               onClick={() => setCurrentScreen('auth')}
-              className="transition-all duration-300 px-10 py-4 text-lg font-bold shadow-lg hover:shadow-xl"
+              className="bg-momint-purple hover:bg-momint-purple-dark text-white px-10 py-4 text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 rounded-2xl animate-pulse-glow"
             >
               Get Early Access
             </Button>
             <Button 
               size="lg" 
-              variant="outline"
-              className="border-white/50 text-white hover:bg-white/20 px-10 py-4 transition-all duration-300 transform hover:scale-105 text-lg font-bold shadow-lg hover:shadow-xl bg-white/5 backdrop-blur-sm"
+              className="glass-card text-primary hover:text-white hover:bg-momint-purple/20 px-10 py-4 transition-all duration-300 transform hover:scale-105 text-lg font-bold shadow-lg hover:shadow-xl rounded-2xl"
             >
               View Demo
             </Button>
           </motion.div>
+        </motion.div>
+        
+        {/* Trust indicators */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="flex flex-wrap justify-center items-center gap-8 text-tertiary text-sm"
+        >
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+            <span>50K+ Active Users</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+            <span>1.2K+ Verified Creators</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
+            <span>25K+ NFTs Minted</span>
+          </div>
         </motion.div>
       </div>
     </section>

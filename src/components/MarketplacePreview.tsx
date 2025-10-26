@@ -8,52 +8,60 @@ import { Eye, Heart, Users } from "lucide-react";
 const featuredNFTs = [
   {
     id: 1,
-    title: "Sunset Vibes",
+    title: "Digital Sunset",
     creator: "Alex Thompson",
     handle: "@alexvibes",
     price: "0.8 ETH",
     priceUSD: "$1,280",
-    image: "https://images.unsplash.com/photo-1635237755468-5fba69c13f29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwYXJ0JTIwbmZ0fGVufDF8fHx8MTc1ODgxODU0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdW5zZXQlMjBkaWdpdGFsJTIwYXJ0fGVufDF8fHx8MTc1ODgxODU0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     perks: ["VIP Event Access", "Exclusive Merch", "1:1 Call"],
     views: 2840,
     likes: 156,
     edition: "1 of 1",
-    category: "Photography"
+    category: "Photography",
+    rarity: "Legendary"
   },
   {
     id: 2,
-    title: "Digital Dreams",
+    title: "Neon Dreams",
     creator: "Sarah Chen",
     handle: "@sarahcreates",
     price: "0.5 ETH",
     priceUSD: "$800",
-    image: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NpYWwlMjBtZWRpYSUyMGNvbnRlbnR8ZW58MXx8fHwxNzU4ODk3OTc1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW9uJTIwY3liZXJwdW5rJTIwYXJ0fGVufDF8fHx8MTc1ODk3OTc1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     perks: ["Behind Scenes", "Discord Role", "Early Drops"],
     views: 1920,
     likes: 89,
     edition: "5 of 10",
-    category: "Digital Art"
+    category: "Digital Art",
+    rarity: "Epic"
   },
   {
     id: 3,
-    title: "Creative Flow",
+    title: "Cosmic Flow",
     creator: "Maya Johnson",
     handle: "@mayastyle",
     price: "0.3 ETH",
     priceUSD: "$480",
-    image: "https://images.unsplash.com/photo-1546380841-bf3afc314a5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGFic3RyYWN0JTIwYXJ0fGVufDF8fHx8MTc1ODkwMzU5OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3NtaWMlMjBzcGFjZSUyMGFydHxlbnwxfHx8MTc1ODkwMzU5OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     perks: ["Tutorial Access", "15% Store Discount"],
     views: 3200,
     likes: 203,
     edition: "3 of 5",
-    category: "Abstract"
+    category: "Abstract",
+    rarity: "Rare"
   }
 ];
 
 export function MarketplacePreview() {
   return (
-    <section id="marketplace" className="py-20 px-4 bg-gradient-to-b from-blue-900 via-purple-900 to-blue-900">
-      <div className="max-w-7xl mx-auto">
+    <section id="marketplace" className="py-20 px-4 bg-momint-primary relative overflow-hidden">
+      {/* Sophisticated background elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-purple-800/20 animate-gradient-shift" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,10 +69,10 @@ export function MarketplacePreview() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl text-primary font-bold mb-6">
             Discover Exclusive Moments
           </h2>
-          <p className="text-xl text-purple-100 max-w-3xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-secondary max-w-3xl mx-auto mb-8 leading-relaxed">
             Browse unique NFTs from your favorite creators, each with real utility and exclusive perks
           </p>
           
@@ -73,10 +81,10 @@ export function MarketplacePreview() {
               <Badge 
                 key={category} 
                 variant={category === "All" ? "default" : "secondary"}
-                className={`px-4 py-2 cursor-pointer transition-all duration-300 ${
+                className={`px-6 py-3 cursor-pointer transition-all duration-300 text-sm font-medium ${
                   category === "All" 
-                    ? "bg-white text-[#1A1A1A]" 
-                    : "bg-white/10 text-white hover:bg-white/20"
+                    ? "bg-momint-purple text-white hover:bg-momint-purple-dark animate-pulse-glow" 
+                    : "glass-card text-secondary hover:text-primary hover:bg-momint-purple/20"
                 }`}
               >
                 {category}
@@ -85,7 +93,7 @@ export function MarketplacePreview() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {featuredNFTs.map((nft, index) => (
             <motion.div
               key={nft.id}
@@ -96,36 +104,45 @@ export function MarketplacePreview() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group cursor-pointer"
             >
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 rounded-3xl overflow-hidden transition-all duration-300 hover:bg-white/15 hover:shadow-2xl hover:shadow-purple-500/25">
+              <Card className="glass-card rounded-3xl overflow-hidden card-hover">
                 <div className="relative">
                   <div className="aspect-square relative overflow-hidden">
                     <ImageWithFallback
                       src={nft.image}
                       alt={nft.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     
-                    {/* Overlay stats */}
+                    {/* Enhanced overlay stats */}
                     <div className="absolute top-4 left-4 right-4 flex justify-between">
-                      <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/20">
+                      <Badge className="glass text-primary border-momint-purple/30">
                         {nft.category}
                       </Badge>
-                      <Badge className="bg-purple-500/80 backdrop-blur-sm text-white border-purple-400/20">
-                        {nft.edition}
-                      </Badge>
+                      <div className="flex flex-col gap-2">
+                        <Badge className="bg-momint-purple/90 text-white border-momint-purple/50">
+                          {nft.edition}
+                        </Badge>
+                        <Badge className={`text-xs font-bold ${
+                          nft.rarity === 'Legendary' ? 'bg-yellow-500/90 text-yellow-900' :
+                          nft.rarity === 'Epic' ? 'bg-purple-500/90 text-white' :
+                          'bg-blue-500/90 text-white'
+                        }`}>
+                          {nft.rarity}
+                        </Badge>
+                      </div>
                     </div>
                     
-                    {/* Bottom overlay info */}
+                    {/* Enhanced bottom overlay info */}
                     <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
-                      <div className="flex items-center space-x-4 text-white/80">
-                        <div className="flex items-center space-x-1">
+                      <div className="flex items-center space-x-4 text-primary/90">
+                        <div className="flex items-center space-x-1 glass px-3 py-1 rounded-full">
                           <Eye className="w-4 h-4" />
-                          <span className="text-sm">{nft.views.toLocaleString()}</span>
+                          <span className="text-sm font-medium">{nft.views.toLocaleString()}</span>
                         </div>
-                        <div className="flex items-center space-x-1">
+                        <div className="flex items-center space-x-1 glass px-3 py-1 rounded-full">
                           <Heart className="w-4 h-4" />
-                          <span className="text-sm">{nft.likes}</span>
+                          <span className="text-sm font-medium">{nft.likes}</span>
                         </div>
                       </div>
                     </div>
@@ -134,37 +151,41 @@ export function MarketplacePreview() {
                 
                 <div className="p-6 space-y-4">
                   <div>
-                    <h3 className="text-white text-xl mb-2">{nft.title}</h3>
-                    <div className="flex items-center space-x-2 mb-3">
-                      <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full" />
+                    <h3 className="text-primary text-xl font-bold mb-2">{nft.title}</h3>
+                    <div className="flex items-center space-x-3 mb-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-momint-purple to-momint-blue rounded-full flex items-center justify-center">
+                        <span className="text-white text-sm font-bold">
+                          {nft.creator.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
                       <div>
-                        <p className="text-purple-200">{nft.creator}</p>
-                        <p className="text-purple-300 text-sm">{nft.handle}</p>
+                        <p className="text-secondary font-medium">{nft.creator}</p>
+                        <p className="text-tertiary text-sm">{nft.handle}</p>
                       </div>
                     </div>
                   </div>
                   
                   <div className="flex justify-between items-center">
                     <div>
-                      <p className="text-white text-lg">{nft.price}</p>
-                      <p className="text-purple-200 text-sm">{nft.priceUSD}</p>
+                      <p className="text-primary text-lg font-bold">{nft.price}</p>
+                      <p className="text-secondary text-sm">{nft.priceUSD}</p>
                     </div>
                     <Button 
                       size="sm"
-                      variant="gradient"
+                      className="bg-momint-purple hover:bg-momint-purple-dark text-white font-medium px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105"
                     >
                       View Details
                     </Button>
                   </div>
                   
-                  <div className="border-t border-white/10 pt-4">
-                    <p className="text-purple-200 text-sm mb-2">Included Perks:</p>
+                  <div className="border-t border-momint-purple/20 pt-4">
+                    <p className="text-secondary text-sm mb-3 font-medium">Included Perks:</p>
                     <div className="flex flex-wrap gap-2">
                       {nft.perks.map((perk, perkIndex) => (
                         <Badge 
                           key={perkIndex}
                           variant="outline"
-                          className="text-xs border-white/20 text-purple-100"
+                          className="text-xs border-momint-purple/30 text-tertiary hover:text-primary hover:border-momint-purple/50 transition-colors duration-200"
                         >
                           {perk}
                         </Badge>
@@ -186,8 +207,7 @@ export function MarketplacePreview() {
         >
           <Button 
             size="lg"
-            variant="outline"
-            className="border-white/50 text-white hover:bg-white/20 px-8 py-4 transition-all duration-300 transform hover:scale-105 bg-white/5 backdrop-blur-sm font-bold"
+            className="glass-card text-primary hover:text-white hover:bg-momint-purple/20 px-8 py-4 transition-all duration-300 transform hover:scale-105 font-bold text-lg rounded-2xl"
           >
             <Users className="w-5 h-5 mr-2" />
             Explore Full Marketplace
