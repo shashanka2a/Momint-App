@@ -36,6 +36,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+    shortcut: '/favicon.svg'
+  },
   openGraph: {
     title: 'Momint - NFT Marketplace for Creators and Fans',
     description: 'Connect with your favorite creators through exclusive NFTs and unlock premium content. Join the future of creator-fan relationships.',

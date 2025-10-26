@@ -43,8 +43,21 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Enhanced Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-momint-purple to-momint-blue rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-lg">M</span>
+            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg">
+              <svg width="40" height="40" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="navLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{stopColor:'#a855f7', stopOpacity:1}} />
+                    <stop offset="100%" style={{stopColor:'#3b82f6', stopOpacity:1}} />
+                  </linearGradient>
+                </defs>
+                <circle cx="16" cy="16" r="15" fill="url(#navLogoGradient)"/>
+                <g transform="translate(16, 16)">
+                  <path d="M0,-8 L2,-2 L8,0 L2,2 L0,8 L-2,2 L-8,0 L-2,-2 Z" fill="white" opacity="0.9"/>
+                  <circle cx="5" cy="-5" r="1" fill="white" opacity="0.7"/>
+                  <circle cx="-5" cy="5" r="1" fill="white" opacity="0.7"/>
+                </g>
+              </svg>
             </div>
             <span className="text-xl md:text-2xl text-primary font-bold">Momint</span>
           </div>
